@@ -1,6 +1,6 @@
 # Parking Backend
 
-Backend para aplicacion parking web
+Backend para aplicación [parking-app](https://github.com/ffrancoc/parking-app)
 
 ## Tecnologías
 - Nodejs
