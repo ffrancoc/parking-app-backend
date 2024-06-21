@@ -8,7 +8,8 @@ const app = express();
 const port = process.env.APP_PORT;
 
 app.get('/users', UserController.users);
-app.get('/users/:id', UserController.user);
+app.get('/user/:id', UserController.user);
+app.get('/user/:username/:password', UserController.login);
 app.get('*', ServerController.NotFound);
 
 app.listen(port, () => {

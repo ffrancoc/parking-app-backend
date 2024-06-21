@@ -35,4 +35,19 @@ export abstract class UserController {
             return res.json(InternalErrorResponse);
         }        
     }
+
+    public static async login(req: Request, res: Response) {
+        try {
+            const username: string = req.params.username;
+            const password: string = req.params.password;
+            
+            const user = await prisma.user.findFirst({where:{username: username, password: password}});
+
+            const data = user ? user : {};            
+            return res.json(OkResponse(data));
+
+        } catch (error) {
+            return res.json(InternalErrorResponse);
+        }  
+    }
 }
